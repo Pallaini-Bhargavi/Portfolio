@@ -18,7 +18,6 @@ Built using **HTML, Tailwind CSS, and JavaScript**, with support for **dark/ligh
 
 ---
 
-
 ---
 
 ## 🛠️ Technologies Used
@@ -35,15 +34,20 @@ Built using **HTML, Tailwind CSS, and JavaScript**, with support for **dark/ligh
 
 - Email: **pallainibhargavi@gmail.com**  
 - LinkedIn: [linkedin.com/in/pallaini-bhargavi](https://www.linkedin.com/in/pallaini-bhargavi/)  
-- GitHub: [github.com/Pallaini-Bhargavi](https://github.com/Pallaini-Bhargavi)
 
 ---
 
 ## ⭐ Live Demo 
 
 GitHub Pages URL: 
-Netlify URL: 
+```
+https://pallaini-bhargavi.github.io/Portfolio/
+```
 
+Netlify URL: 
+```
+https://portfoliobybhargavi.netlify.app/
+```
 ---
 
 ## 📌 About This Project
