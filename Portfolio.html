@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Pallaini Bhargavi's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#F4F3FF',
+                            100: '#E4E1FF',
+                            200: '#C7BEFF',
+                            500: '#7C3AED',
+                            600: '#6D28D9',
+                            700: '#5B21B6',
+                        },
+                        accent: {
+                            500: '#3B82F6',
+                            600: '#2563EB',
+                        },
+                    },
+                    boxShadow: {
+                        soft: '0 18px 45px rgba(15, 23, 42, 0.12)',
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-500">
+
+    <!-- Navbar -->
+    <header
+        class="sticky top-0 z-50 border-b border-slate-200/70 dark:border-slate-800/80 bg-slate-100/80 dark:bg-slate-950/80 backdrop-blur">
+        <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-primary-500 via-accent-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-soft">
+                    PB
+                </div>
+                <span class="font-semibold text-slate-900 dark:text-slate-50 text-base">Pallaini Bhargavi</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle (desktop) -->
+                <button id="themeToggle"
+                    class="hidden sm:inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-300/70 dark:border-slate-700/70 text-lg bg-white/80 dark:bg-slate-900/70 text-slate-800 dark:text-slate-100 hover:border-primary-500/80 transition">
+                    <span id="themeIcon">🌙</span>
+                </button>
+
+                <!-- Theme Toggle (mobile) -->
+                <button id="themeToggleMobile"
+                    class="sm:hidden inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-300/70 dark:border-slate-700/70 text-lg bg-white/80 dark:bg-slate-900/70 text-slate-800 dark:text-slate-100">
+                    🌙
+                </button>
+
+                <!-- Mobile nav toggle -->
+                <button id="navToggle"
+                    class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full border border-slate-300/70 dark:border-slate-700/70 text-lg bg-white/80 dark:bg-slate-900/70 text-slate-800 dark:text-slate-100">
+                    ☰
+                </button>
+            </div>
+
+            <ul id="navMenu"
+                class="hidden md:flex items-center gap-6 font-medium text-slate-700 dark:text-slate-200">
+                <li><a href="#home" class="hover:text-primary-500">Home</a></li>
+                <li><a href="#about" class="hover:text-primary-500">About</a></li>
+                <li><a href="#education" class="hover:text-primary-500">Education</a></li>
+                <li><a href="#experience" class="hover:text-primary-500">Experience</a></li>
+                <li><a href="#skills" class="hover:text-primary-500">Skills</a></li>
+                <li><a href="#projects" class="hover:text-primary-500">Projects</a></li>
+                <li><a href="#services" class="hover:text-primary-500">Services</a></li>
+                <li><a href="#achievements" class="hover:text-primary-500">Achievements</a></li>
+                <li><a href="#contact" class="hover:text-primary-500">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="md:hidden hidden border-t border-slate-200/70 dark:border-slate-800/80 bg-slate-100/95 dark:bg-slate-950/95">
+            <div class="max-w-6xl mx-auto px-4 py-3">
+                <ul class="flex flex-col gap-3 text-sm font-medium text-slate-700 dark:text-slate-200">
+                    <li><a href="#home" class="block hover:text-primary-500">Home</a></li>
+                    <li><a href="#about" class="block hover:text-primary-500">About</a></li>
+                    <li><a href="#education" class="block hover:text-primary-500">Education</a></li>
+                    <li><a href="#experience" class="block hover:text-primary-500">Experience</a></li>
+                    <li><a href="#skills" class="block hover:text-primary-500">Skills</a></li>
+                    <li><a href="#projects" class="block hover:text-primary-500">Projects</a></li>
+                    <li><a href="#services" class="block hover:text-primary-500">Services</a></li>
+                    <li><a href="#achievements" class="block hover:text-primary-500">Achievements</a></li>
+                    <li><a href="#contact" class="block hover:text-primary-500">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 relative">
+        <div class="pointer-events-none fixed inset-x-0 -top-40 -z-10 blur-3xl opacity-70">
+            <div
+                class="mx-auto max-w-3xl bg-gradient-to-tr from-blue-200 via-purple-200 to-pink-200 dark:from-blue-900/40 dark:via-purple-900/40 dark:to-fuchsia-900/40 h-72 rounded-full">
+            </div>
+        </div>
+
+        <!-- HOME -->
+        <section id="home" class="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 py-20"
+            data-animate>
+            <p class="text-sm sm:text-base font-medium tracking-wide
+                text-primary-700 dark:text-primary-300 mb-3">
+                Final Year CSE (Data Science) • 2022 – 2026
+            </p>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold
+                 text-transparent bg-clip-text
+                 bg-gradient-to-r from-blue-600 to-purple-600
+                 dark:from-blue-400 dark:to-purple-400 mb-4">
+                Pallaini Bhargavi
+            </h1>
+            <p class="text-lg sm:text-xl font-medium text-slate-700 dark:text-slate-300 mb-5">
+                Aspiring Final Year Student • AI &amp; ML Enthusiast • Data Analytics &amp; Blockchain Explorer
+            </p>
+            <p class="max-w-2xl text-sm sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-10">
+                I enjoy building secure, intelligent and user-centered applications powered by data and clean design.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4 mb-4">
+                <a href="#projects" class="px-6 py-3 rounded-full text-white font-semibold text-sm sm:text-base
+                  bg-gradient-to-r from-blue-600 to-purple-600 shadow-soft hover:shadow-xl
+                  hover:scale-105 transition">
+                    View My Work
+                </a>
+
+                <a href="#contact" class="px-6 py-3 rounded-full font-semibold text-sm sm:text-base
+                  border-2 border-blue-600 text-blue-700
+                  dark:border-blue-400 dark:text-blue-300
+                  hover:scale-105 transition">
+                    Get in Touch
+                </a>
+
+                <a href="https://drive.google.com/file/d/17hnW1Jmv2z-_giffciAmon6RpoyEK9ME/view?usp=sharing" target="_blank" class="px-6 py-3 rounded-full font-semibold text-sm sm:text-base
+                  border-2 border-purple-500 text-purple-600
+                  dark:border-purple-400 dark:text-purple-300
+                  hover:scale-105 transition">
+                    Download Resume
+                </a>
+            </div>
+        </section>
+
+        <!-- ABOUT & EDUCATION -->
+        <section id="about" class="py-14 border-t border-slate-200/70 dark:border-slate-800/80" data-animate>
+            <div class="grid md:grid-cols-[1.5fr,1fr] gap-10 items-start">
+                <!-- About -->
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-50 mb-2">About Me</h2>
+                    <p class="text-sm text-primary-700 dark:text-primary-300 mb-4">
+                        Curious | Detail-oriented | Always learning.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                        I’m <span class="font-semibold">Pallaini Bhargavi</span>, a final-year
+                        <span class="font-medium">B.Tech CSE (Data Science)</span> student passionate about
+                        cybersecurity,
+                        machine learning, and AI. I enjoy turning complex problems into simple, practical solutions
+                        through
+                        hands-on projects and clean, maintainable code.
+                    </p>
+                    <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                        My goal is to become a versatile developer who combines problem-solving, data-driven thinking,
+                        and modern engineering practices to build secure and impactful applications.
+                    </p>
+                    <div class="grid sm:grid-cols-3 gap-4 mt-4">
+                        <div
+                            class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-4 shadow-sm hover:shadow-soft hover:-translate-y-1 transition">
+                            <p class="text-[11px] text-slate-500 dark:text-slate-400">Current Degree</p>
+                            <p class="text-sm font-semibold text-slate-900 dark:text-slate-50">B.Tech CSE (DS)</p>
+                        </div>
+                        <div
+                            class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-4 shadow-sm hover:shadow-soft hover:-translate-y-1 transition">
+                            <p class="text-[11px] text-slate-500 dark:text-slate-400">CGPA</p>
+                            <p class="text-sm font-semibold text-slate-900 dark:text-slate-50">8.8</p>
+                        </div>
+                        <div
+                            class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-4 shadow-sm hover:shadow-soft hover:-translate-y-1 transition">
+                            <p class="text-[11px] text-slate-500 dark:text-slate-400">Graduation</p>
+                            <p class="text-sm font-semibold text-slate-900 dark:text-slate-50">2026</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div id="education"
+                    class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-5 shadow-soft">
+                    <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50 mb-3">Education</h3>
+                    <div class="space-y-4 text-sm">
+                        <div class="pb-3 border-b border-slate-200/70 dark:border-slate-800/80">
+                            <p class="font-semibold text-slate-900 dark:text-slate-50">B.Tech, CSE (Data Science)</p>
+                            <p class="text-slate-600 dark:text-slate-300">Srinivasa Ramanujan Institute of Technology,
+                                Anantapur</p>
+                            <p class="text-[11px] text-slate-500 dark:text-slate-400">Aug 2022 – Jun 2026 </p>
+                        </div>
+                        <div class="pb-3 border-b border-slate-200/70 dark:border-slate-800/80">
+                            <p class="font-semibold text-slate-900 dark:text-slate-50">Intermediate</p>
+                            <p class="text-slate-600 dark:text-slate-300">K.S.R. Govt. Junior College, Anantapur</p>
+                            <p class="text-[11px] text-slate-500 dark:text-slate-400">Jun 2020 – Apr 2022</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-900 dark:text-slate-50">S.S.C</p>
+                            <p class="text-slate-600 dark:text-slate-300">Sri Shiridi Sai Mokshith EM High School,
+                                Anantapur</p>
+                            <p class="text-[11px] text-slate-500 dark:text-slate-400">Jun 2019 – Apr 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="py-14 border-t border-slate-200/70 dark:border-slate-800/80" data-animate>
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-50">Experience</h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Hands-on industry exposure and internship
+                        work.</p>
+                </div>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-[2fr,1.2fr]">
+
+                <div
+                    class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-6 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <div class="flex items-start justify-between w-full">
+
+
+                        <div>
+                            <p class="text-[18px] font-semibold text-slate-900 dark:text-slate-300">
+                                Salesforce with Agentblazer Champion
+                            </p>
+
+                            <p class="italic text-sm text-slate-700 dark:text-slate-300">
+                                Salesforce Developer Intern
+                            </p>
+                        </div>
+
+                        <div class="text-right">
+                            <p class="text-sm font-medium text-slate-700 dark:text-slate-300">
+                                May 2025 – Jul 2025
+                            </p>
+                            <p class="italic text-xs text-slate-500 dark:text-slate-400">
+                                Remote
+                            </p>
+                        </div>
+
+                    </div>
+                    <ul class="list-disc list-inside mt-4 text-sm text-slate-700 dark:text-slate-300 space-y-2">
+                        <li>Completed an 8-week Salesforce Developer internship covering CRM and cloud fundamentals.
+                        </li>
+                        <li>Built custom objects, fields, and automation using Flows and Lightning App Builder.</li>
+                        <li>Completed Apex Specialist and Object Relationships Superbadge tasks.</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-primary-50 via-sky-50 to-purple-50 dark:from-slate-900/70 dark:via-slate-900/60 dark:to-slate-900/70 rounded-2xl border border-slate-200/70 dark:border-slate-700/80 p-6 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all">
+
+                    <div>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mb-2">Tech domains I enjoy working in</p>
+                        <ul class="space-y-1 text-sm text-slate-800 dark:text-slate-200">
+                            <li>• Data Analytics & Visualization </li>
+                            <li>• ML & AI </li>
+                            <li>• Web Development </li>
+                            <li>• Cyber Security & Blockchain </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-4 text-[11px] text-slate-500 dark:text-slate-300">
+                        Always open to <span class="font-medium">internships, projects and collaborations</span> in
+                        these areas.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--SKILLS-->
+        <section id="skills" class="py-14 border-t border-slate-200/70 dark:border-slate-800/80" data-animate>
+            <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-50 mb-2">Skills</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mb-6">A mix of programming, CS fundamentals, and
+                tools.</p>
+
+
+            <div class="grid gap-6 md:grid-cols-3">
+                <!-- Programming -->
+                <div
+                    class="bg-slate-900/50 rounded-2xl border border-slate-700 p-5 shadow-soft hover:shadow-xl transition-all">
+                    <h3 class="text-xl font-semibold text-white mb-3">Programming</h3>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span
+                            class="px-3 py-1 rounded-full bg-purple-900/40 text-purple-200 border border-purple-700/40">Python</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-sky-900/40 text-sky-200 border border-sky-700/40">Java</span>
+                    </div>
+                </div>
+
+                <!-- Web -->
+                <div
+                    class="bg-slate-900/50 rounded-2xl border border-slate-700 p-5 shadow-soft hover:shadow-xl transition-all">
+                    <h3 class="text-xl font-semibold text-white mb-3">Web</h3>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span
+                            class="px-3 py-1 rounded-full bg-emerald-900/40 text-emerald-200 border border-emerald-700/40">HTML</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-amber-900/40 text-amber-200 border border-amber-700/40">CSS</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-rose-900/40 text-rose-200 border border-rose-700/40">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div
+                    class="bg-slate-900/50 rounded-2xl border border-slate-700 p-5 shadow-soft hover:shadow-xl transition-all">
+                    <h3 class="text-xl font-semibold text-white mb-3">Tools</h3>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span
+                            class="px-3 py-1 rounded-full bg-rose-900/40 text-slate-200 border border-slate-600">SQL</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-purple-900/40 text-slate-200 border border-slate-600">GitHub</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-3 mt-6">
+                <!-- Domains & Fundamentals -->
+                <div
+                    class="bg-slate-900/50 rounded-2xl border border-slate-700 p-5 shadow-soft hover:shadow-xl transition-all">
+                    <h3 class="text-xl font-semibold text-white mb-3">Domains & Fundamentals</h3>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span
+                            class="px-3 py-1 rounded-full bg-rose-900/40 text-slate-200 border border-slate-600">DSA</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-purple-900/40 text-purple-200 border border-purple-700/40">Machine
+                            Learning</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-emerald-900/40 text-emerald-200 border border-emerald-700/40">AI</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-amber-900/40 text-slate-200 border border-slate-600">Operating
+                            Systems</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-sky-900/40 text-sky-200 border border-sky-700/40">Blockchain</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-rose-900/40 text-sky-200 border border-sky-700/40">Computer
+                            Networks</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div
+                    class="bg-slate-900/50 rounded-2xl border border-slate-700 p-5 shadow-soft hover:shadow-xl transition-all">
+                    <h3 class="text-xl font-semibold text-white mb-3">Soft Skills</h3>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span
+                            class="px-3 py-1 rounded-full bg-purple-900/40 text-purple-200 border border-purple-700/40">Quick
+                            Learner</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-sky-900/40 text-sky-200 border border-sky-700/40">Adaptable</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-emerald-900/40 text-emerald-200 border border-emerald-700/40">Team
+                            Player</span>
+                    </div>
+                </div>
+
+                <!-- Additional Skills -->
+                <div
+                    class="bg-slate-900/50 rounded-2xl border border-slate-700 p-5 shadow-soft hover:shadow-xl transition-all">
+                    <h3 class="text-xl font-semibold text-white mb-3">Additional Skills</h3>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span
+                            class="px-3 py-1 rounded-full bg-sky-900/40 text-sky-200 border border-sky-700/40">Problem
+                            Solving</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-purple-900/40 text-purple-200 border border-purple-700/40">Communication</span>
+                        <span
+                            class="px-3 py-1 rounded-full bg-emerald-900/40 text-emerald-200 border border-emerald-700/40">Time
+                            Management</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="py-14 border-t border-slate-200/70 dark:border-slate-800/80" data-animate>
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-50">Projects</h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-300">Hands-on work across security, AI, and web
+                        development.</p>
+                </div>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-2">
+                <!-- Project 1 -->
+                <article
+                    class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-5 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all"
+                    data-animate>
+
+                    <div class="flex items-start justify-between mb-1">
+                        <div>
+                            <p
+                                class="text-[11px] font-medium text-primary-700 dark:text-primary-300 uppercase tracking-[0.18em]">
+                                Cybersecurity • Steganography
+                            </p>
+                            <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+                                Secure Data Hiding Using Calendar Heatmap Steganography
+                            </h3>
+                        </div>
+
+                        <p class="text-[12px] text-slate-600 dark:text-slate-400 text-right">
+                            Nov 2025 – Ongoing
+                        </p>
+                    </div>
+
+                    <!-- Description -->
+                    <p class="text-sm text-slate-700 dark:text-slate-300 mb-3">
+                        Building a secure data-hiding system that embeds secret messages inside a calendar heatmap
+                        using
+                        key-based random tile mapping for enhanced confidentiality.
+                    </p>
+
+                    <!-- Tech -->
+                    <p class="text-[12px] text-slate-500 dark:text-slate-400 mb-4">
+                        Tech: Java, Cyber Security, Steganography, Heatmap Encoding
+                    </p>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/Pallaini-Bhargavi/CSD-2025-26_Batch-A-16" target="_blank"
+                        class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-300 hover:underline">
+                        View on GitHub →
+                    </a>
+                </article>
+
+                <!-- Project 2 -->
+                <article
+                    class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-5 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all"
+                    data-animate>
+
+                    <div class="flex items-start justify-between mb-1">
+                        <div>
+                            <p
+                                class="text-[11px] font-medium text-sky-700 dark:text-sky-300 uppercase tracking-[0.18em]">
+                                Web • API Integration
+                            </p>
+                            <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+                                Weather Wardrobe Advisor
+                            </h3>
+                        </div>
+
+                        <p class="text-[12px] text-slate-600 dark:text-slate-400 text-right">
+                            Aug 2025 – Nov 2025
+                        </p>
+                    </div>
+
+                    <p class="text-sm text-slate-700 dark:text-slate-300 mb-3">
+                        A weather-based outfit recommendation web app that uses live weather data and fabric
+                        suitability
+                        to suggest what to wear, including alternate options.
+                    </p>
+
+                    <p class="text-[12px] text-slate-500 dark:text-slate-400 mb-4">
+                        Tech: HTML, CSS, JavaScript, OpenWeather API
+                    </p>
+
+                    <a href="https://github.com/Pallaini-Bhargavi/Weather_Wardrobe_Advisor" target="_blank"
+                        class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-300 hover:underline">
+                        View on GitHub →
+                    </a>
+                </article>
+
+                <!-- Project 3 -->
+                <article
+                    class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-5 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all"
+                    data-animate>
+
+                    <div class="flex items-start justify-between mb-1">
+                        <div>
+                            <p
+                                class="text-[11px] font-medium text-emerald-700 dark:text-emerald-300 uppercase tracking-[0.18em]">
+                                Productivity • Web
+                            </p>
+                            <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+                                Smart Study Scheduler
+                            </h3>
+                        </div>
+
+                        <p class="text-[12px] text-slate-600 dark:text-slate-400 text-right">
+                            Jun 2024 – Sep 2024
+                        </p>
+                    </div>
+
+                    <p class="text-sm text-slate-700 dark:text-slate-300 mb-3">
+                        A responsive web app that helps students create personalized study plans, manage resources,
+                        and set reminders to stay on track with their learning.
+                    </p>
+
+                    <p class="text-[12px] text-slate-500 dark:text-slate-400 mb-4">
+                        Tech: Web stack (HTML, CSS, JS)
+                    </p>
+
+                    <a href="https://github.com/Pallaini-Bhargavi/Smart-Study-Scheduler" target="_blank"
+                        class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-300 hover:underline">
+                        View on GitHub →
+                    </a>
+                </article>
+
+                <!-- Project 4 -->
+                <article
+                    class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-5 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all"
+                    data-animate>
+
+                    <div class="flex items-start justify-between mb-1">
+                        <div>
+                            <p
+                                class="text-[11px] font-medium text-rose-700 dark:text-rose-300 uppercase tracking-[0.18em]">
+                                Security • Python
+                            </p>
+                            <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">
+                                Digital Forensics Toolkit
+                            </h3>
+                        </div>
+
+                        <p class="text-[12px] text-slate-600 dark:text-slate-400 text-right">
+                            Jan 2024 – Apr 2024
+                        </p>
+                    </div>
+
+                    <p class="text-sm text-slate-700 dark:text-slate-300 mb-3">
+                        A Python-based toolkit that scans files and folders to identify suspicious content,
+                        simulating
+                        real-world digital forensic investigations and security analysis.
+                    </p>
+
+                    <p class="text-[12px] text-slate-500 dark:text-slate-400 mb-4">
+                        Tech: Python, File System Operations, Basic Forensics
+                    </p>
+
+                    <a href="https://github.com/Pallaini-Bhargavi/Digital-Forensics-Toolkit" target="_blank"
+                        class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-300 hover:underline">
+                        View on GitHub →
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="py-14 border-t border-slate-200/70 dark:border-slate-800/80" data-animate>
+            <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-50 mb-2">Services</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mb-6">How I can add value to your projects or team.
+            </p>
+
+            <div class="grid gap-6 md:grid-cols-2">
+                <div class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-6 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all"
+                    data-animate>
+                    <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2">Web Design &amp;
+                        Frontend Development</h3>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 mb-3">
+                        I create clean, responsive websites using HTML, CSS and JavaScript with a focus on
+                        usability,
+                        performance and modern UI patterns.
+                    </p>
+                    <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-1">
+                        <li>• Responsive layouts for mobile and desktop</li>
+                        <li>• Intuitive, user-friendly interfaces</li>
+                        <li>• Simple animations and interactive elements</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-6 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all"
+                    data-animate>
+                    <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2">Back-End Logic &amp;
+                        Integration</h3>
+                    <p class="text-sm text-slate-700 dark:text-slate-300 mb-3">
+                        I build functional web features using Python/Java and connect them to databases using SQL
+                        for data storage and retrieval.
+                    </p>
+                    <ul class="text-base text-slate-600 dark:text-slate-300 space-y-1">
+                        <li>• Basic REST-style logic and APIs</li>
+                        <li>• Database schema design and queries (SQL)</li>
+                        <li>• Data-driven features for dashboards and tools</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS & CERTIFICATIONS -->
+        <section id="achievements" class="py-14 border-t border-slate-200/70 dark:border-slate-800/80" data-animate>
+            <h2 class="text-base md:text-3xl font-semibold text-slate-900 dark:text-slate-50 mb-2">Achievements
+                &amp; Certifications</h2>
+            <p class="text-base text-slate-600 dark:text-slate-300 mb-6">
+                Recognitions and credentials that reflect my continuous learning journey.
+            </p>
+
+            <div class="grid gap-6 md:grid-cols-2">
+                <!-- Certifications -->
+                <div class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-6 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all"
+                    data-animate>
+                    <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50 mb-3">Certifications</h3>
+                    <ul class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+                        <li><span class="font-medium">• Ethical Hacking </span> – Eduskills Academy (Dec 2025)</li>
+                        <li><span class="font-medium">• AWS Cloud Development</span> – Amazon Web Services (May
+                                2025)</li>
+                        <li><span class="font-medium">• Smart Coder </span> – Smart Interviews (Oct 2025)</li>
+                        <li><span class="font-medium">• Google Cloud Foundations </span> – Google Cloud (Oct 2024)
+                        </li>
+                        <li><span class="font-medium">• Introduction to Networks</span> – CCNA (May 2024)</li>
+                    </ul>
+                </div>
+
+                <!-- Achievements -->
+                <div class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-6 shadow-soft hover:shadow-xl hover:-translate-y-1 transition-all"
+                    data-animate>
+                    <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50 mb-3">Achievements &amp;
+                        Activities</h3>
+                    <ul class="text-sm text-slate-700 dark:text-slate-300 space-y-2">
+                        <li><span class="font-medium">• Youth Red Cross Volunteer</span> – SRIT, Rotary Puram •
+                            2024–2025</li>
+                        <li><span class="font-medium">• Code Sprint - Pixel2K24</span> – JNTU College of
+                            Engineering, Anantapur • Oct 2024</li>
+                        <li><span class="font-medium">• Shriram Foundation Scholarship</span> – 2018–2023</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-14 border-t border-slate-200/70 dark:border-slate-800/80 mb-16"
+            data-animate>
+            <div class="grid gap-8 md:grid-cols-[1.3fr,1fr] items-start">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-50 mb-2">Contact
+                    </h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-300 mb-6">
+                        Have an opportunity, idea, or collaboration in mind? Feel free to reach out.
+                    </p>
+
+                    <form action="https://formsubmit.co/bhagibalu123@gmail.com" method="POST"
+                        onsubmit="showSuccessPopup(event)"
+                        class="bg-slate-50/80 dark:bg-slate-900/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 p-6 shadow-soft space-y-4">
+
+                        <!-- Name -->
+                        <div>
+                            <label
+                                class="block text-xs font-medium text-slate-700 dark:text-slate-200 mb-1">Name</label>
+                            <input type="text" name="name" placeholder="Your name" required
+                                class="w-full rounded-lg border border-slate-300/80 dark:border-slate-700/80 bg-white/80 dark:bg-slate-900/70 px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500" />
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label
+                                class="block text-xs font-medium text-slate-700 dark:text-slate-200 mb-1">Email</label>
+                            <input type="email" name="email" placeholder="you@example.com" required
+                                class="w-full rounded-lg border border-slate-300/80 dark:border-slate-700/80 bg-white/80 dark:bg-slate-900/70 px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500" />
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label
+                                class="block text-xs font-medium text-slate-700 dark:text-slate-200 mb-1">Message</label>
+                            <textarea name="message" rows="4" placeholder="Tell me about your project or query..."
+                                required
+                                class="w-full rounded-lg border border-slate-300/80 dark:border-slate-700/80 bg-white/80 dark:bg-slate-900/70 px-3 py-2 text-sm focus:ring-2 focus:ring-primary-500"></textarea>
+                        </div>
+
+                        <!-- Required for FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+
+                        <button type="submit"
+                            class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-soft hover:shadow-xl hover:scale-105 transition">
+                            Send Message
+                        </button>
+                    </form>
+
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-[5fr,1fr] items-start">
+
+                    <div class="space-y-6">
+
+                        <!-- Direct Contact -->
+                        <div
+                            class="rounded-2xl border border-slate-200/80 dark:border-slate-700/80 bg-slate-900/50 p-6 shadow-soft">
+                            <h3 class="text-2xl font-semibold text-slate-100 mb-3">Direct Contact</h3>
+
+                            <div class="flex flex-wrap gap-2 text-sm">
+                                <a href="mailto:pallainibhargavi@gmail.com"
+                                    class="px-3 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:text-purple-300 transition">
+                                    📩 Mail
+                                </a>
+
+                                <a href="https://www.linkedin.com/in/pallaini-bhargavi/" target="_blank"
+                                    class="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:text-purple-300 transition">
+                                    💼 LinkedIn
+                                </a>
+
+                                <a href="tel:+918309059250"
+                                    class="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:text-purple-300 transition">
+                                    📞 Phone
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Online Platforms -->
+                        <div
+                            class="rounded-2xl border border-slate-200/80 dark:border-slate-700/80 bg-slate-900/50 p-6 shadow-soft">
+                            <h3 class="text-2xl font-semibold text-slate-100 mb-3">Online Platforms</h3>
+
+                            <div class="flex flex-wrap gap-2 text-sm">
+                                <a href="https://github.com/Pallaini-Bhargavi" target="_blank"
+                                    class="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:text-purple-300 transition">
+                                    🐙 GitHub
+                                </a>
+
+                                <a href="https://leetcode.com/u/Bhargavi-p/" target="_blank"
+                                    class="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:text-purple-300 transition">
+                                    ⚡ LeetCode
+                                </a>
+
+                                <a href="https://www.hackerrank.com/profile/Bhargavi374" target="_blank"
+                                    class="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:text-purple-300 transition">
+                                    🏆 HackerRank
+                                </a>
+
+                                <a href="https://www.codechef.com/users/p_bhargavi03" target="_blank"
+                                    class="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:text-purple-300 transition">
+                                    👨‍🍳 CodeChef
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+        class="border-t border-slate-200/70 dark:border-slate-800/80 py-6 bg-slate-100/80 dark:bg-slate-950/80 backdrop-blur">
+        <div
+            class="max-w-6xl mx-auto px-4 flex items-center justify-center text-center text-xs text-slate-500 dark:text-slate-400">
+            <p>© <span id="year"></span> Pallaini Bhargavi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Success Popup -->
+    <div id="successPopup"
+        class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center hidden z-50">
+
+        <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-xl text-center max-w-xs">
+            <h3 class="text-lg font-semibold text-green-600 dark:text-green-400 mb-2">
+                ✅ Message Sent Successfully!
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                Thank you for reaching out. I will get back to you soon.
+            </p>
+            <button onclick="closePopup()"
+                class="px-5 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition">
+                Return to Portfolio
+            </button>
+        </div>
+
+    </div>
+
+    <!-- External JS -->
+    <script src="portfolio.js"></script>
+</body>
+
+</html>
