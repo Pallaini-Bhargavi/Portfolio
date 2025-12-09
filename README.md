@@ -18,8 +18,6 @@ Built using **HTML, Tailwind CSS, and JavaScript**, with support for **dark/ligh
 
 ---
 
----
-
 ## 🛠️ Technologies Used
 
 - **HTML5**
